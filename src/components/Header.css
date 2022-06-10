@@ -1,0 +1,137 @@
+.Main-header
+{
+   top:0;
+    background-color: blue;
+    height: 90px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
+    
+}
+.website-logo img
+{
+    position: absolute;
+    left:34px;
+    height: 80px;
+    width: 148px;
+}
+.upper-head
+{
+    
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.upper-head ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.upper-head li
+{
+    
+    padding-top: 5px!important;
+    padding: 15px;
+    font:14px SourceSansPro;
+}
+
+.upper-head a
+{
+    text-decoration: none;
+    cursor: pointer;
+}
+.upper-head a:hover
+{
+    border-bottom: 2px black solid;
+}
+.btn-visit
+{
+    background-color: black;
+    color: aliceblue;
+
+}
+.btn-visit a:hover
+{
+    border-bottom: 2px white solid;
+}
+/*lower head*/
+
+
+.lower-head
+{
+    margin-top: 15px;
+    display: flex;
+    font-size: 100%;
+    font:inherit;
+    justify-content: flex-end;
+}
+.lower-head ul
+{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.lower-head li
+{
+    
+
+    padding: 15px;
+    font:14px SourceSansPro;
+}
+input
+{
+    outline: none;
+    margin-top:5px;
+    width: 264px;
+    height: 32px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.search_box
+{
+    display: flex;
+    padding-top: 0 !important;;
+}
+.search_box img
+{
+    position: relative;
+    left:-27px;
+    top:10px;
+    background-color: antiquewhite;
+    align-self: flex-start;
+}
+.fav_icon
+{
+    padding-top: 0px!important;
+    padding-left: 0px!important;
+}
+.upper-head img
+{
+    width: 21px;
+    height: 21px;
+}
+.hand_burger
+{
+    display: none;
+    align-self: flex-start;
+    padding-bottom: 0px!important;
+}
+
+/* @media screen and (max-width: 992px) {
+
+    .upper-head ul
+    {
+        flex-direction: column;
+        z-index: 999;
+    }
+    .upper-head img
+    {
+      visibility: visible;
+      background-color: azure;
+    }
+    .lower-head ul
+    {
+        flex-direction: column;
+        z-index: 999;
+    }
+    
+  } */
