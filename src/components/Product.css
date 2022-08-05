@@ -1,0 +1,16 @@
+.main_card
+{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    height: 300px;
+    border-radius: 20px; 
+     border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.card_img img
+{
+    width: 250px;
+    height: 200px;
+}

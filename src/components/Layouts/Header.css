@@ -1,7 +1,8 @@
 .Main-header
 {
    top:0;
-    background-color: blue;
+    background-color: white;
+    width: 100vw;
     height: 90px;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
     
@@ -37,6 +38,7 @@
 .upper-head a
 {
     text-decoration: none;
+    color: black;
     cursor: pointer;
 }
 .upper-head a:hover
@@ -46,7 +48,12 @@
 .btn-visit
 {
     background-color: black;
-    color: aliceblue;
+   
+
+}
+.btn-visit a
+{
+    color: aliceblue!important;
 
 }
 .btn-visit a:hover
@@ -74,28 +81,51 @@
 {
     
 
+
     padding: 15px;
     font:14px SourceSansPro;
 }
-input
+.lower-head span
 {
+    cursor: pointer;
+}
+.search
+{
+
     outline: none;
-    margin-top:5px;
-    width: 264px;
-    height: 32px;
-    border: 2px solid black;
-    border-radius: 20px;
+    margin:4px 14px;
+    align-items: center;
+    border: none;
+    width: 220px;
+    
+   
 }
 .search_box
 {
     display: flex;
+    width: 264px;
+    height: 32px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
     padding-top: 0 !important;;
+}
+.search_main
+{
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right:10px;
 }
 .search_box img
 {
     position: relative;
-    left:-27px;
-    top:10px;
+    left:-14px;
+    top:6px;
     background-color: antiquewhite;
     align-self: flex-start;
 }
@@ -103,6 +133,7 @@ input
 {
     padding-top: 0px!important;
     padding-left: 0px!important;
+    padding-right: 0px!important;
 }
 
 .hand_burger
@@ -119,7 +150,7 @@ input
     position: absolute;
     right: -1000px;
     top:0px;
-    background-color:blue;
+    background-color:#fff;
     box-shadow:-3px 0 5px 0 #555
     
 }
@@ -178,3 +209,70 @@ input
     } */
     
   } 
+
+  .hover_main
+  {
+    display: none;
+    position: absolute;
+    top:0
+  
+  }
+  
+  .hover_tile:hover  + .hover_main, .hover_main:hover
+  {
+    display: flex;
+    margin: 0px auto;
+    position: absolute;
+    top:90px;
+    left: 0;
+    right:0;
+    width: 95vw;
+    height: 500px;
+    background-color: #fff;
+    border: 0.2px solid black;
+   
+  }
+ 
+
+  .hover_warp
+  {
+    width: 100%;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    padding-top: 10px;
+    padding-left: 10px; */
+  }
+  .first_row
+  {
+    height: 40px;
+    display: flex;
+   
+    gap:3px;
+    /* border-top: 0.5px solid black; */
+    border-bottom: 0.5px solid black;
+
+  }
+  .class_by
+  {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+  .category,.brands
+  {
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.08);
+    
+  }
+  .sec_row
+  {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 10px;
+  }
+  .first_grid_row
+  {
+    display: flex;
+
+    flex-direction: column;
+  }

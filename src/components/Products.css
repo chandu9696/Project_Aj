@@ -1,0 +1,46 @@
+.main_product
+{
+    display: flex;
+    gap:20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin:0px 5px;
+    max-width: 100vw;
+}
+.btn_left
+{
+    position: relative;
+    top:150px;
+    left: 15px;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px -3px #9a9a9a;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    font-size: 20px;
+}
+.btn_right
+{
+    position: relative;
+    left:calc(95% - 50px);
+    top:150px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+  color: black;
+  font-size: 20px;
+}
+
+.header_image
+{
+    width:100vw;
+   
+
+}

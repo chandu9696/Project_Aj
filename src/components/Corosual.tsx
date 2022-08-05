@@ -1,10 +1,15 @@
 import { useState } from "react"
 import './Corosual.css'
-export default function Coursal()
+interface images
 {
+    image:string[]
+}
+export default function Coursal(props:images)
+{
+   
     const [current,setCurrent]=useState<number>(0);
     setTimeout(() => {
-        if(current==images.length-1)
+        if(current===props.image.length-1)
         setCurrent(0)
         else
         {
@@ -12,20 +17,12 @@ export default function Coursal()
         }
     },3000);
 
-    const images=
-    [
-        'https://images-eu.ssl-images-amazon.com/images/G/31/img21/June2022GW/New_FDFO_Stripe/Shoes_Deals/Homepage_DesktopHeroTemplate_3000x1200._CB636249551_.jpg',
-       
-       'https://images-eu.ssl-images-amazon.com/images/G/31/SmallAppliances-22/LA_SA_SummerPage-22/PC_FDFO-eos-june._CB636252795_.jpg',
-       
-       'https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Event/Gw/MiniART-Jun/Women-Deals-Unrec-1500-Eng._CB636318050_.jpg'
-     
-    ]
+ 
     return(
         <div className="corosal">
         
             
-        <img src={images[current]} onClick={()=>
+        <img src={props.image[current]} alt='' onClick={()=>
         {
             console.log('test')
         }}/>
@@ -33,4 +30,5 @@ export default function Coursal()
        
         </div>
     )
+    
 }
