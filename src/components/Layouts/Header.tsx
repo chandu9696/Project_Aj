@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import './Header.css'
 export default function Header() {
     const [data,setData]=useState<boolean>(false);
@@ -93,7 +94,7 @@ export default function Header() {
             <div className="upper-head">
 
                 <ul>
-                    <li><a href='# '>Sign in/Join Ajio</a></li>
+                    <li><Link to='/signup'>Sign in/Join Ajio</Link></li>
                     <li><a href='# '>Customer Care</a></li>
                     <li className='btn-visit'>
                         <a href='# '>Visit Ajio</a>
