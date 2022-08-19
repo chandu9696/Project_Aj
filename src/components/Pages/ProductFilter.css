@@ -107,7 +107,8 @@
 .grid_info
 {
     display: flex;
-    gap:2px;
+    gap:10px;
+    align-items: center;
 }
 .preference_selector
 {
@@ -129,4 +130,26 @@
     grid-template-columns: repeat(5,1fr);
     justify-content: center;
     align-items: center;
+}
+.three_grid
+{
+    height: 15px;
+    width: 27px;
+    background-image: linear-gradient(
+90deg
+,#c4c4c4 7px,#c4c4c4 0,#fff 0,#fff 0);
+    background-size: 10px 10px;
+
+    cursor: pointer;
+ 
+}
+.five_grid
+{
+    height: 15px;
+    width: 47px;
+    background-image: linear-gradient(
+90deg
+,#c4c4c4 7px,#c4c4c4 0,#fff 0,#fff 0);
+    background-size: 10px 10px;
+    cursor: pointer;
 }

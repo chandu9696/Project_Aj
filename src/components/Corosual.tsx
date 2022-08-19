@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import './Corosual.css'
 interface images
 {
@@ -8,7 +8,13 @@ export default function Coursal(props:images)
 {
    
     const [current,setCurrent]=useState<number>(0);
-    setTimeout(() => {
+    // console.log(props.image,current)
+    useEffect(()=>{
+        return()=>{
+            clearTimeout(timeout)
+        }
+    })
+   const timeout= setTimeout(() => {
         if(current===props.image.length-1)
         setCurrent(0)
         else

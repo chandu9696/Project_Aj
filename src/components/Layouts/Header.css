@@ -277,3 +277,46 @@
 
     flex-direction: column;
   }
+  .product_search
+  {
+        position: absolute;
+        top:86px;
+        margin-left: 15px;
+        width: 240px!important;
+        background-color: #fff;
+        font-weight: 300;
+        z-index: 4;
+        border: 1px solid #ccc!important;
+        border-radius: 0;
+        box-shadow: 0 8px 15px #999;
+     
+    
+  }
+  .search_template
+  {
+  
+      display: flex;
+      justify-content: center;
+      padding: 10px 0px;
+      width: 100%;
+      gap:10px;
+      border-bottom: 0.5px solid gray;
+  }
+  .search_template:hover
+  {
+      background-color: #ccc;
+  }
+  .search_template img
+  {
+      width: 20px;
+      height: 20px;
+      border-radius: 25px;
+  }
+  .search_template div
+  {
+      width: 60px;
+  }
+  .product_search1
+  {
+      display: none;
+  }

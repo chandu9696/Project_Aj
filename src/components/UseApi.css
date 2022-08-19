@@ -1,0 +1,39 @@
+/* .product_search
+{
+    border: 2px solid gray;
+    width: 40vw;
+}
+.product_api_main input
+{
+    width: 40vw;
+    height: 30px;
+    font-size: 15px;
+    align-items: center;
+}
+.search_template
+{
+
+    display: flex;
+    gap:30px;
+    padding: 10px 0px;
+    width: 100%;
+
+}
+.search_template:hover
+{
+    background-color: bisque;
+}
+.search_template img
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+}
+.search_template div
+{
+    width: 60px;
+}
+.product_search1
+{
+    display: none;
+} */

@@ -216,8 +216,8 @@ export default function Productfilter()
                         <div><h6>{productdata.length} Items Found</h6></div>
                         <div className="grid_info">
                             <div>GRID</div>
-                            <div><button onClick={()=>setgrid(3)}>3</button></div>
-                            <div><button onClick={()=>setgrid(5)}>5</button></div>
+                            <div onClick={()=>setgrid(3)} className='three_grid'></div>
+                            <div  onClick={()=>setgrid(5)} className='five_grid'></div>
                         </div>
                         <div className='preference_selector'>
                             <div>Sort By</div>

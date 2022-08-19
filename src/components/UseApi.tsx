@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
+import Product from "./Product"
+import './UseApi.css'
 interface Image
 {
     url:string
 }
-interface IForm
+export interface IForm
 {
+    _id:string,
     name:string,
     description:string,
     category:string,
@@ -14,6 +17,8 @@ interface IForm
 export default function UseApi()
 {
     const [product,setProduct]=useState<IForm[]>([])
+    const [SearchProduct,setSeearchProduct]=useState<IForm[]>([])
+    const [indicate,SetIndicate]=useState<boolean>(false)
     useEffect(()=>{
         async function api()
         {
@@ -26,27 +31,54 @@ export default function UseApi()
         api()
     },[])
 
-  const handleInput=async(e:any)=>{
+const handleInput=async(e:any)=>{
          const name=e.target.value
+         if(name.length===0)
+         {
+            SetIndicate(false)
+          
+         }
+         if(!(/^\s*$/.test(name)) || name.length!=0)
+         {
         const response=await fetch(`https://productapimongoose.herokuapp.com/api/v1/product?keyword=${name}`)
-        const data:IForm=await response.json()
-        console.log(data)
-    }
+        const data:{data:IForm[]}=await response.json()
+        setSeearchProduct(data.data)
+        SetIndicate(true)
+         }
+         else
+         {
+            setSeearchProduct([])
+         }
+   
+    }  
     return(
         <div className='product_api_main'>
             <h1>This is page</h1>
                 <input type='text' onChange={handleInput}/>
 
-                <div className="product_all_data">
-                    {product.map((item,i)=>{
+                <div className={indicate?"product_search":"product_search1"}>
+                    {SearchProduct.length!=0?SearchProduct.map((item,i)=>{
+                        
                         return(
-                            <>
+                            <div className="search_template" key={i}>
+                            <img src={item.images[0].url}/>
                             <div>{item.name}</div>
-                            <img src={item.images[0].url} style={{width:'200px'}}/>
-                            </>
+                            <div>{item.category}</div>
+                            </div>
+                        )
+                    }):<h1>No product Matched</h1>}
+                </div>
+                {/* <div className="main_product" id={props.name}>
+                {productdata.map((item,index)=>{
+                    return()
+                })}
+             </div> */}
+                {/* <div className="product_all_data">
+                    {product.map((item,index)=>{
+                        return(<Product {...item} key={index}></Product>
                         )
                     })}
-                </div>
+                </div> */}
         </div>
     )
 }

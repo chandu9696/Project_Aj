@@ -13,6 +13,7 @@ import FileUploadInReact from './components/FileUploadInReact';
 import Apitest from './components/ApiTest';
 import UseApi from './components/UseApi';
 import SignUp from './components/Layouts/Signup';
+import ProductDetails from './components/Pages/ProductDetails';
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
      <Route path='/signup' element={<SignUp/>}/>
      <Route path='/api' element={<Apitest/>}/>
      <Route path='/use' element={<UseApi/>}/>
+     <Route path='/product/:product_id' element={<ProductDetails/>}/>
   
 
 

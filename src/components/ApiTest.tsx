@@ -5,16 +5,16 @@ interface IForm
     name:string,
     description:string,
     category:string,
-    images:string,
+    images:string[],
     price:number
 }
 
 export default  function Apitest()
 {
     // const [file,Setfile]=useState<string>('')
-    const [preview,SetPreview]=useState<string | any>('')
+    const [preview,SetPreview]=useState<string | any>([])
     const [message,Setmessage]=useState<string>('')
-   const [formdata,setformdata]=useState<IForm>({name:'',description:'',category:'',images:'',price:-1})
+   const [formdata,setformdata]=useState<IForm>({name:'',description:'',category:'',images:[''],price:-1})
     function handleFile(e:any)
     {
         console.log(e.target.files[0].size)
@@ -35,7 +35,7 @@ export default  function Apitest()
         const reader=new FileReader()
         reader.readAsDataURL(file_data);
         reader.onloadend=()=>{
-            SetPreview(reader.result)
+            SetPreview([...preview,reader.result])
         }
     }
     function handleSumit(e:any)
@@ -86,7 +86,7 @@ export default  function Apitest()
             </div>
             <div>
             <label htmlFor="image_pro">Add Product Image</label>
-            <input type='file' onChange={(e)=>handleFile(e)} id='image_pro'/>
+            <input type='file' multiple onChange={(e)=>handleFile(e)} id='image_pro'/>
             </div>
             <div>
             <label htmlFor='price'>Price</label>

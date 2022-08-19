@@ -1,9 +1,34 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { IForm } from '../UseApi';
 import './Header.css'
 export default function Header() {
     const [data,setData]=useState<boolean>(false);
+    const [product,setProduct]=useState<IForm[]>([])
+    const [SearchProduct,setSeearchProduct]=useState<IForm[]>([])
+    const [indicate,SetIndicate]=useState<boolean>(false)
+    const navigate=useNavigate()
+    const handleInput=async(e:any)=>{
+        const name=e.target.value
+    
+        if(name.length===0)
+        {
+           SetIndicate(false)
+         
+        }
+        if(!(/^\s*$/.test(name)) || name.length!=0)
+        {
+       const response=await fetch(`https://productapimongoose.herokuapp.com/api/v1/product?keyword=${name}`)
+       const data:{data:IForm[]}=await response.json()
+       setSeearchProduct(data.data)
+       SetIndicate(true)
+        }
+        else
+        {
+           setSeearchProduct([])
+        }
   
+   }
     const hover_section= <div className='hover_main'>
     <div className='hover_warp'>
       <div className='first_row'>
@@ -74,8 +99,20 @@ export default function Header() {
 
             <div className='search_box'>
 
-            <input type='search' className='search' placeholder=' Search Item'></input>
+            <input type='search' className='search' placeholder=' Search Item' onChange={handleInput}></input>
             <img src='https://rc.jiomeet.jio.com/assets/img/chat-search-icon.svg' alt=''  />
+            </div>
+            <div className={indicate?"product_search":"product_search1"}>
+                    {SearchProduct.length!=0?SearchProduct.map((item,i)=>{
+                        
+                        return(
+                            <div className="search_template" key={i} onClick={()=>navigate(`/product/${item._id}`)}>
+                            <img src={item.images[0].url}/>
+                            <div>{item.name}</div>
+                            <div>{item.category}</div>
+                            </div>
+                        )
+                    }):<h1>No product Matched</h1>}
             </div>
         </li>
         <li className='fav_icon'>
@@ -106,8 +143,9 @@ export default function Header() {
             <div className="lower-head">
 
                 {low}
-
+               
             </div>
+        
          
         {data?<div className='sidebar'>
         <div className='hand_burger'onClick={()=>{setData(!data)}}>
