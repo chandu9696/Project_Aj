@@ -4,8 +4,8 @@
     /* box-sizing: ; */
     /* background-color: #fff; */
     display: flex;
-    height: 1000px;
-  
+    height: auto;
+    /* overflow-y: hidden; */
     overflow-x: hidden;
 }
 .main_left_productfilter
